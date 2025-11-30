@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-    return "Main Page <h1>HELLO<h1>"
+    return "Main Page <h1>HELLO</h1>"
 
 @app.route("/<name>")
 def user(name):
@@ -13,7 +13,7 @@ def user(name):
 
 @app.route("/admin")
 def admin():
-    return redirect(url_for("home"))
+    return redirect(url_for("user", name="Admin"))
 
 if __name__ == "__main__":
     app.run()
